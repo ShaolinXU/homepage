@@ -1,0 +1,51 @@
+affiliation:
+  name: Federal Institute of Hydrology (Bundesanstalt für Gewässerkunde, BfG), Department U4, Koblenz, Germany
+  url: https://www.bafg.de/
+
+links:
+  - label: E-mail
+    text: shaolin.xu.93@gmail.com
+    url: mailto:shaolin.xu.93@gmail.com
+  - label: Google Scholar
+    text: Shaolin Xu
+    url: https://scholar.google.com/citations?user=in_AO5cAAAAJ&hl=en
+  - label: ResearchGate
+    text: Shaolin Xu
+    url: https://www.researchgate.net/profile/Shaolin-Xu
+  - label: LinkedIn
+    text: Shaolin Xu
+    url: https://www.linkedin.com/in/shaolin-xu-3333601a7/
+  - label: GitHub
+    text: ShaolinXU
+    url: https://github.com/ShaolinXU
+
+experience:
+  - role: Research Assistant (FraGen project)
+    org: Federal Institute of Hydrology (Bundesanstalt für Gewässerkunde, BfG), Department U4, Koblenz, Germany
+    start: 2026-02-01
+    summary: |
+      *FraGen: Development and application of eDNA-based methods for assessing the genetic fragmentation of fish populations in federal waterways.* Developing and validating a non-invasive eDNA framework for the genetic diversity and population fragmentation of key fish species, and using it to evaluate fish passage and support waterway management.
+      PIs: Dr. Nicole Scheifhacken and Dr. Sascha Krenek.
+  - role: Postdoctoral Fellow (CSC-DAAD fellowship, 2 years)
+    org: Leibniz Institute of Freshwater Ecology and Inland Fisheries (IGB), Berlin, Germany
+    start: 2022-08-01
+    end: 2024-07-31
+    summary: |
+      Project: *The origin of genomic-based thermal adaptation of Daphnia cucullata towards decades of warming in natural lakes*.
+      Team: Prof. Dr. Luc De Meester and Prof. Dr. Justyna Wolinska.
+
+education:
+  - role: PhD, Ecology
+    org: Jinan University, Guangzhou, China
+    start: 2016-09-01
+    end: 2021-12-31
+    summary: |
+      Thesis: *Pattern and origin of the genetic diversity of Daphnia magna and Daphnia tibetana in Qinghai-Tibet Plateau*.
+      Promoter: Prof. Dr. Bo-Ping Han.
+  - role: Undergraduate, Ecology
+    org: Jinan University, Guangzhou, China
+    start: 2012-09-01
+    end: 2016-06-30
+    summary: |
+      Thesis: *Development of microsatellite markers for Daphnia sinensis*.
+      Promoter: Prof. Dr. Bo-Ping Han.

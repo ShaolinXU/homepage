@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.Locale }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} · {{ site.Title }}{{ end }}</title>
+  <meta name="description" content="{{ .Description | default site.Params.description }}">
+  <link rel="canonical" href="{{ .Permalink }}">
+  {{- range .AllTranslations }}
+  <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}">
+  {{- end }}
+  {{- with .OutputFormats.Get "RSS" }}
+  <link rel="alternate" type="application/rss+xml" title="{{ site.Title }}" href="{{ .Permalink }}">
+  {{- end }}
+  {{- $css := resources.Get "css/main.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+  <link rel="stylesheet" href="{{ "katex/katex.min.css" | relURL }}">
+  {{- $js := resources.Get "js/menu.js" | minify | fingerprint }}
+  <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
+</head>
+<body class="type-{{ .Type }} kind-{{ .Kind }}">
+  <a class="skip" href="#main">{{ i18n "skip" }}</a>
+  {{ partial "menu.html" . }}
+  {{ partial "cover.html" . }}
+  <main id="main" class="content">
+    {{ block "title" . }}<h1 class="page-title">{{ .Title }}</h1>{{ end }}
+    <div class="prose">
+      {{ block "main" . }}{{ end }}
+    </div>
+    {{ partial "footer.html" . }}
+  </main>
+</body>
+</html>

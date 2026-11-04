@@ -1,0 +1,20 @@
+{{ define "main" }}
+{{ .Content }}
+{{- range .Pages.ByDate.Reverse }}
+<article class="project">
+  <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+  {{- with .Params.summary }}<p class="meta">{{ . }}</p>{{ end }}
+  <details>
+    <summary>{{ i18n "details" }}</summary>
+    <div class="details-body">
+      {{ .Content }}
+      {{- with .Params.links }}
+      <p class="links">{{ range . }}<a href="{{ .url }}" rel="noopener">{{ with .label }}{{ . }}{{ else }}{{ i18n (printf "link_%s" .type) }}{{ end }}</a> {{ end }}</p>
+      {{- end }}
+      {{- with .Params.tags }}<p class="tags">{{ delimit . " · " }}</p>{{ end }}
+      <p class="links"><a href="{{ .RelPermalink }}">{{ i18n "open_page" }} →</a></p>
+    </div>
+  </details>
+</article>
+{{- end }}
+{{ end }}

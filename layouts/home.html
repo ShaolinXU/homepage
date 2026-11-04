@@ -1,0 +1,29 @@
+{{ define "title" }}
+<h1 class="home-title">{{ site.Title }}</h1>
+<p class="home-sub">
+  {{- with site.Params.name_zh }}<span>{{ . }}</span> · {{ end }}
+  {{- range $i, $k := site.Params.keywords }}{{ if $i }} · {{ end }}<a href="{{ $k.url }}" rel="noopener">{{ $k.name }}</a>{{ end -}}
+</p>
+{{ end }}
+{{ define "main" }}
+<ul class="tiles">
+  {{- range site.Menus.main }}
+  {{- $e := . }}
+  {{- with .Params.image }}
+  {{- $img := resources.Get (printf "img/%s" .) }}
+  {{- with $img }}
+  {{- $t := .Resize "800x q80" }}
+  {{- /* same photo and same focal point as the page's own cover, so tile and page match */}}
+  {{- $focus := "center" }}
+  {{- with $e.Page }}{{ $focus = .Params.cover_focus | default "center" }}{{ end }}
+  <li>
+    <a href="{{ $e.URL }}">
+      <img src="{{ $t.RelPermalink }}" width="{{ $t.Width }}" height="{{ $t.Height }}" alt="" loading="lazy" style="object-position: {{ $focus }}">
+      <span>{{ $e.Name }}</span>
+    </a>
+  </li>
+  {{- end }}
+  {{- end }}
+  {{- end }}
+</ul>
+{{ end }}

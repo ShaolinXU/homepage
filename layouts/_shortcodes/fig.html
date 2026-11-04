@@ -1,0 +1,7 @@
+{{- $src := .Get "src" }}
+{{- with resources.Get (printf "img/figures/%s" $src) }}
+<figure>
+  <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="{{ $.Get "alt" }}" loading="lazy">
+  {{- with $.Get "cap" }}<figcaption>{{ . | markdownify }}</figcaption>{{ end }}
+</figure>
+{{- else }}{{ errorf "fig shortcode: assets/img/figures/%s not found" $src }}{{ end -}}

@@ -1,0 +1,31 @@
+en:
+  label: English
+  locale: en-us
+  contentDir: content/en
+  weight: 1
+  params:
+    description: Personal academic website of Shaolin Xu. Population genomics of Daphnia, plus fish, environmental DNA (eDNA) and bioinformatics.
+    me_short: S. Xu
+    # keywords shown under the name on the home page, each linking to Wikipedia
+    keywords:
+      - {name: Bioinformatics, url: "https://en.wikipedia.org/wiki/Bioinformatics"}
+      - {name: Zooplankton, url: "https://en.wikipedia.org/wiki/Zooplankton"}
+      - {name: Fish, url: "https://en.wikipedia.org/wiki/Fish"}
+      - {name: eDNA, url: "https://en.wikipedia.org/wiki/Environmental_DNA"}
+      - {name: Population Genetics, url: "https://en.wikipedia.org/wiki/Population_genetics"}
+
+zh:
+  label: 中文
+  locale: zh-Hans
+  contentDir: content/zh
+  weight: 2
+  params:
+    description: Shaolin Xu 的个人学术主页：水蚤群体基因组学，以及鱼类、环境DNA（eDNA）与生物信息学研究。
+    me_short: S. Xu
+    name_zh: 徐少林
+    keywords:
+      - {name: 生物信息学, url: "https://zh.wikipedia.org/wiki/生物信息学"}
+      - {name: 浮游动物, url: "https://zh.wikipedia.org/wiki/浮游动物"}
+      - {name: 鱼类, url: "https://zh.wikipedia.org/wiki/鱼"}
+      - {name: eDNA, url: "https://zh.wikipedia.org/wiki/环境DNA"}
+      - {name: 群体遗传学, url: "https://zh.wikipedia.org/wiki/群体遗传学"}

@@ -1,0 +1,16 @@
+{{ define "main" }}
+{{ .Content }}
+{{- range .Pages.GroupByDate "2006" }}
+<h2 class="year">{{ .Key }}</h2>
+<ul class="pubs">
+  {{- range .Pages }}
+  {{- $names := slice }}
+  {{- range .Params.authors }}
+    {{- if eq . "me" }}{{ $names = $names | append (printf "<u>%s</u>" (htmlEscape site.Params.me_short)) }}{{ else if hasPrefix . "=" }}{{ $names = $names | append (printf "<u>%s</u>" (htmlEscape (strings.TrimPrefix "=" .))) }}{{ else }}{{ $names = $names | append (htmlEscape .) }}{{ end }}
+  {{- end }}
+  {{- $p := .Params.publication }}
+  <li>{{ delimit $names ", " | safeHTML }} ({{ .Date.Year }}). {{ .Title }}. <em>{{ $p.name }}</em>{{ with $p.volume }}, {{ . }}{{ end }}{{ with $p.issue }}({{ . }}){{ end }}{{ with $p.pages }}, {{ . }}{{ end }}.{{ with .Params.doi }} <a href="https://doi.org/{{ . }}" rel="noopener">doi:{{ . }}</a>{{ end }}</li>
+  {{- end }}
+</ul>
+{{- end }}
+{{ end }}

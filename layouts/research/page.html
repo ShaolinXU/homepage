@@ -1,0 +1,12 @@
+{{ define "title" }}<p class="page-title"><a href="{{ .Parent.RelPermalink }}">{{ .Parent.Title }}</a></p>{{ end }}
+{{ define "main" }}
+<article class="project-page">
+  <h2 class="post-title">{{ .Title }}</h2>
+  {{- with .Params.summary }}<p class="meta">{{ . }}</p>{{ end }}
+  {{ .Content }}
+  {{- with .Params.links }}
+  <p class="links">{{ range . }}<a href="{{ .url }}" rel="noopener">{{ with .label }}{{ . }}{{ else }}{{ i18n (printf "link_%s" .type) }}{{ end }}</a> {{ end }}</p>
+  {{- end }}
+  {{- with .Params.tags }}<p class="tags">{{ delimit . " · " }}</p>{{ end }}
+</article>
+{{ end }}

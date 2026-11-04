@@ -1,0 +1,11 @@
+{{- $name := .Params.cover | default "home.jpg" }}
+{{- with resources.Get (printf "img/%s" $name) }}
+{{- $img := .Resize "1400x q80" }}
+<aside class="cover">
+  <img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="" fetchpriority="high"
+       style="object-position: {{ $.Params.cover_focus | default "center" }}">
+  {{- with index hugo.Data.credits (strings.TrimSuffix ".jpg" $name) }}
+  <p class="credit">{{ i18n "credit" }}: <a href="{{ .page }}" rel="noopener">{{ .artist }}</a>, {{ .license }}</p>
+  {{- end }}
+</aside>
+{{- end }}

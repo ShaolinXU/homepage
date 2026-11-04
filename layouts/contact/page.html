@@ -1,0 +1,10 @@
+{{ define "main" }}
+{{- $me := index hugo.Data site.Language.Lang "me" }}
+{{ .Content }}
+<p class="affil"><a href="{{ $me.affiliation.url }}" rel="noopener">{{ $me.affiliation.name }}</a></p>
+<ul class="plain contact-list">
+  {{- range $me.links }}
+  <li><span class="label">{{ .label }}</span> <a href="{{ .url }}"{{ if not (hasPrefix .url "mailto:") }} rel="noopener"{{ end }}>{{ .text }}</a></li>
+  {{- end }}
+</ul>
+{{ end }}

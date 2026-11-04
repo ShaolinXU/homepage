@@ -1,0 +1,51 @@
+affiliation:
+  name: 德国联邦水文研究所（Bundesanstalt für Gewässerkunde，BfG），U4 部门，德国科布伦茨
+  url: https://www.bafg.de/
+
+links:
+  - label: 电子邮件
+    text: shaolin.xu.93@gmail.com
+    url: mailto:shaolin.xu.93@gmail.com
+  - label: Google Scholar
+    text: Shaolin Xu
+    url: https://scholar.google.com/citations?user=in_AO5cAAAAJ&hl=en
+  - label: ResearchGate
+    text: Shaolin Xu
+    url: https://www.researchgate.net/profile/Shaolin-Xu
+  - label: LinkedIn
+    text: Shaolin Xu
+    url: https://www.linkedin.com/in/shaolin-xu-3333601a7/
+  - label: GitHub
+    text: ShaolinXU
+    url: https://github.com/ShaolinXU
+
+experience:
+  - role: 研究助理（FraGen 项目）
+    org: 德国联邦水文研究所（Bundesanstalt für Gewässerkunde，BfG），U4 部门，德国科布伦茨
+    start: 2026-02-01
+    summary: |
+      *FraGen：开发并应用基于 eDNA 的方法评估联邦水道中鱼类种群的遗传破碎化。*开发并验证一套非侵入式的 eDNA 框架，用于评估关键鱼类的遗传多样性与种群破碎化，并以此评价鱼道效果、支持水道管理。
+      项目负责人（PI）：Nicole Scheifhacken 博士和 Sascha Krenek 博士。
+  - role: 博士后研究员（CSC-DAAD 联合资助，2 年）
+    org: 莱布尼茨淡水生态与内陆渔业研究所（IGB），德国柏林
+    start: 2022-08-01
+    end: 2024-07-31
+    summary: |
+      项目：*Daphnia cucullata 在自然湖泊数十年升温下基因组热适应的起源*。
+      团队：Luc De Meester 教授、Justyna Wolinska 教授。
+
+education:
+  - role: 博士，生态学
+    org: 暨南大学，中国广州
+    start: 2016-09-01
+    end: 2021-12-31
+    summary: |
+      学位论文：*青藏高原大型溞（Daphnia magna）与西藏溞（Daphnia tibetana）遗传多样性的格局与起源*。
+      导师：韩博平教授。
+  - role: 本科，生态学
+    org: 暨南大学，中国广州
+    start: 2012-09-01
+    end: 2016-06-30
+    summary: |
+      毕业论文：*中华溞（Daphnia sinensis）微卫星标记的开发*。
+      导师：韩博平教授。

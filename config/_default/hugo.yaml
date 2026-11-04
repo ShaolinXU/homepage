@@ -1,0 +1,27 @@
+baseURL: 'https://me.xushaolin.top/'
+title: 'Shaolin Xu'
+
+defaultContentLanguage: en
+defaultContentLanguageInSubdir: false
+hasCJKLanguage: true
+
+enableRobotsTXT: true
+disableKinds: [taxonomy, term]
+summaryLength: 40
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+    extensions:
+      passthrough:
+        enable: true
+        delimiters:
+          block: [['$$', '$$']]
+          inline: [['\(', '\)']]
+  highlight:
+    noClasses: false
+
+outputs:
+  home: [HTML, RSS]
+  section: [HTML]

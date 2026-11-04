@@ -1,0 +1,32 @@
+main:
+  - name: Home
+    pageRef: /
+    weight: 1
+  - name: About
+    pageRef: /about
+    weight: 10
+    params: {image: about.jpg}
+  - name: Research
+    pageRef: /research
+    weight: 20
+    params: {image: research.jpg}
+  - name: Publications
+    pageRef: /publications
+    weight: 30
+    params: {image: publications.jpg}
+  - name: Career
+    pageRef: /career
+    weight: 40
+    params: {image: career.jpg}
+  - name: Blog
+    pageRef: /blog
+    weight: 50
+    params: {image: blog.jpg}
+  - name: Gallery
+    pageRef: /gallery
+    weight: 55
+    params: {image: gallery.jpg}
+  - name: Contact
+    pageRef: /contact
+    weight: 60
+    params: {image: contact.jpg}

@@ -1,0 +1,16 @@
+{{ define "main" }}
+{{- $me := index hugo.Data site.Language.Lang "me" }}
+{{- range (slice (dict "key" "experience" "items" $me.experience) (dict "key" "education" "items" $me.education)) }}
+<h2>{{ i18n .key }}</h2>
+<ul class="timeline">
+  {{- range .items }}
+  <li>
+    <p class="when">{{ with .start }}{{ time.Format (i18n "monthYear") (time.AsTime .) }} – {{ end }}{{ with .end }}{{ time.Format (i18n "monthYear") (time.AsTime .) }}{{ else }}{{ i18n "present" }}{{ end }}</p>
+    <p class="what"><strong>{{ .role }}</strong><br>{{ .org }}</p>
+    {{ with .summary }}{{ . | markdownify }}{{ end }}
+  </li>
+  {{- end }}
+</ul>
+{{- end }}
+{{ .Content }}
+{{ end }}

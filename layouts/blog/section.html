@@ -1,0 +1,8 @@
+{{ define "main" }}
+{{ .Content }}
+<ul class="posts">
+  {{- range .Pages.ByDate.Reverse }}
+  <li><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time> <a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ with .Params.summary }}<span class="sum"> — {{ . }}</span>{{ end }}</li>
+  {{- end }}
+</ul>
+{{ end }}

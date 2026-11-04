@@ -1,0 +1,20 @@
+# Hugo build output
+public/
+resources/
+.hugo_build.lock
+
+# macOS
+.DS_Store
+
+# Private source material used to write the pages (never publish)
+CV_info/
+
+# Local-only tutorial
+教程.md
+
+# Old blog archive (source material only)
+*.zip
+
+# Local-only helper files (never publish)
+publish.sh
+网站修改地图.md

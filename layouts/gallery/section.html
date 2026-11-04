@@ -1,0 +1,25 @@
+{{ define "main" }}
+{{ .Content }}
+{{- $lang := site.Language.Lang }}
+{{- $meta := hugo.Data.gallery | default dict }}
+{{- $imgs := slice }}
+{{- range resources.Match "gallery/*" }}{{ if eq .MediaType.MainType "image" }}{{ $imgs = $imgs | append . }}{{ end }}{{ end }}
+{{- $imgs = sort $imgs "Name" "desc" }}
+<ul class="gallery" data-gallery data-close="{{ i18n "photo_close" }}" data-prev="{{ i18n "photo_prev" }}" data-next="{{ i18n "photo_next" }}">
+  {{- range $imgs }}
+  {{- $name := path.Base .Name }}
+  {{- $d := index $meta $name | default dict }}
+  {{- $desc := index $d $lang | default (index $d "en") | default "" }}
+  {{- $thumb := .Fill "480x480 q80 Center" }}
+  {{- $big := .Resize "2000x q82" }}
+  <li>
+    <a class="g-item" href="{{ $big.RelPermalink }}">
+      <img src="{{ $thumb.RelPermalink }}" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}" alt="{{ $desc }}" loading="lazy">
+    </a>
+    <p class="g-desc" hidden>{{ $desc }}</p>
+  </li>
+  {{- end }}
+</ul>
+{{- $js := resources.Get "js/gallery.js" | minify | fingerprint }}
+<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
+{{ end }}

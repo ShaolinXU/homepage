@@ -1,0 +1,7 @@
+{{ define "main" }}
+{{- with resources.Get "img/avatar.jpg" }}
+{{- $a := .Fill "240x240 q85 Center" }}
+<img class="avatar" src="{{ $a.RelPermalink }}" width="120" height="120" alt="{{ site.Title }}">
+{{- end }}
+{{ .Content }}
+{{ end }}
